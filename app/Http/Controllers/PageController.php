@@ -26,6 +26,7 @@ class PageController extends Controller
     }
 
     public function getChitiet($id){
+        $new_product=Product::where('new',1)->limit(4)->get();
         $product=Product::find($id);
         $new_id_type = $product->id_type;
 
@@ -36,6 +37,7 @@ class PageController extends Controller
             'id_type' =>  $new_id_type,
             'product' => $product,
             'productAll' => $productAll,
+            'new_product'=>$new_product,
         ]);
     }
 
@@ -54,6 +56,14 @@ class PageController extends Controller
         $cart=new Cart($oldCart);
         $cart->add($product,$id);
         $reg->Session()->put('cart',$cart);
+        return redirect()->back();
+    }
+
+    public function getDelItemCart($id){
+        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $cart=new Cart($oldCart);
+        $cart->removeItem($id);
+        Session::put('cart',$cart);
         return redirect()->back();
     }
 }

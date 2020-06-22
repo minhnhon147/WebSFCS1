@@ -3,11 +3,11 @@
 <div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
-				<h6 class="inner-title">Product</h6>
+				<h6 class="inner-title">Chi tiết sản phẩm</h6>
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="index.html">Home</a> / <span>Product</span>
+					<a href="index">Trang chủ</a> / <span>Product</span>
 				</div>
 			</div>
 			{{--  {{dd($product->unit_price)}}  --}}
@@ -54,7 +54,7 @@
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-								<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+								<a class="add-to-cart" href="add-to-cart/{{$product->id}}"><i class="fa fa-shopping-cart"></i></a>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="add-to-cart pull-left" href="add-to-cart/{{$p->id}}"><i class="fa fa-shopping-cart"></i></a>
 										<a class="beta-btn primary" href="chi-tiet-san-pham/{{$p->id}}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
@@ -140,37 +140,18 @@
 						</div>
 					</div> <!-- best sellers widget -->
 					<div class="widget">
-						<h3 class="widget-title">New Products</h3>
+						<h3 class="widget-title">Sản phẩm mới</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
+								@foreach($new_product as $new)
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+									<a class="pull-left" href="chi-tiet-san-pham/{{$new->id}}"><img src="source/image/product/{{$new->image}}" alt=""></a>
 									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
+										{{$new->name}}
+										<span class="beta-sales-price">{{$new->unit_price}}</span>
 									</div>
 								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
+								@endforeach
 							</div>
 						</div>
 					</div> <!-- best sellers widget -->
