@@ -51,3 +51,8 @@ Route::get('del-cart/{id}',[
 	'as'=>'xoagiohang',
 	'uses'=>'PageController@getDelItemCart'
 ]);
+
+Route::get('dat-hang',[
+	'as'=>'dathang',
+	'uses'=>'PageController@getDatHang'
+]);

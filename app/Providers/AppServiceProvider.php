@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             
             $view->with('loai_sp',$loai_sp);
         });
-        view()->composer('header',function($view){
+        view()->composer(['header','page.dat_hang'],function($view){
             if(Session('cart')){
                 $oldCart=Session::get('cart');
                 $cart = new Cart($oldCart);
@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
                 $cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
             }
         });
+
 
     }
 }

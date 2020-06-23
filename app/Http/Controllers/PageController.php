@@ -66,4 +66,7 @@ class PageController extends Controller
         Session::put('cart',$cart);
         return redirect()->back();
     }
+    public function getDatHang(){
+        return view('page.dat_hang');
+    }
 }

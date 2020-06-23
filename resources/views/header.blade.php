@@ -20,7 +20,7 @@
 		<div class="header-body">
 			<div class="container beta-relative header-flex" style="display: flex;justify-content: space-between;align-items: center;">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="source/assets/dest/images/logo-bk.png" width="80px" alt=""></a>
+					<a href="index.html" id="logo"><img src="source/assets/dest/images/logo fs.png" width="80px" alt=""></a>
 				</div>
 				<div>
 					<p style="font-size: 30px;font-weight: 600">Smart Food Court System</p>
@@ -64,7 +64,7 @@
 
 									<div class="center">
 										<div class="space10">&nbsp;</div>
-										<a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+										<a href="dat-hang" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
 									</div>
 								</div>
 							</div>
