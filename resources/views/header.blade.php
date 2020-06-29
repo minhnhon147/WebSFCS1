@@ -38,10 +38,10 @@
 						@if(Session::has('cart'))
 
 
-						<div class="cart">
-							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (@if(Session::has('cart')){{Session('cart')->totalQty}})
+						<div class="cart" style="position: fixed;right:1%; z-index:50">
+							<div class="beta-select"><i class="fa fa-shopping-cart"></i> (@if(Session::has('cart')){{Session('cart')->totalQty}})
 								@else Trống @endif <i class="fa fa-chevron-down"></i></div>
-							<div class="beta-dropdown cart-body">
+							<div class="beta-dropdown cart-body" style="width:300px;z-index:999">
 
 								@foreach($product_cart as $product )
 

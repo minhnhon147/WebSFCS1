@@ -37,32 +37,26 @@
 								<p class="pull-left">Tìm thấy {{count($new_product)}} sản phẩm</p>
 								<div class="clearfix"></div>
 							</div>
-
 							<div class="row">
 								@foreach($new_product as $p)
-								//@if ($p->new==1)
-								<div class="col-sm-3">
-									<div class="single-item">
-										<div class="single-item-header">
-											<a href="chi-tiet-san-pham/{{$p->id}}"><img src="source/image/product/{{$p->image}}"  alt="" height="200" width="250"/></a>
-										</div>
-										<div class="single-item-body">
-											<p class="single-item-title">{{$p->name}}</p>
-											<p class="single-item-price">
-												<span>{{$p->unit_price}}</span>
-											</p>
-										</div>
-										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="add-to-cart/{{$p->id}}"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="chi-tiet-san-pham/{{$p->id}}">Details <i class="fa fa-chevron-right"></i></a>
-											<div class="clearfix"></div>
+									<div class="col-sm-3">
+										<div class="single-item">
+											<div class="single-item-header">
+												<a href="chi-tiet-san-pham/{{$p->id}}"><img src="source/image/product/{{$p->image}}"  alt="" height="200" width="250"/></a>
+											</div>
+											<div class="single-item-body">
+												<p class="single-item-title">{{$p->name}}</p>
+												<p class="single-item-price">
+													<span>{{$p->unit_price}}</span>
+												</p>
+											</div>
+											<div class="single-item-caption">
+												<a class="add-to-cart pull-left" href="add-to-cart/{{$p->id}}"><i class="fa fa-shopping-cart"></i></a>
+												<a class="beta-btn primary" href="chi-tiet-san-pham/{{$p->id}}">Details <i class="fa fa-chevron-right"></i></a>
+												<div class="clearfix"></div>
+											</div>
 										</div>
 									</div>
-								</div>
-								//@endif
-
-									
-								
 								@endforeach
 							</div>
 							<div class="row">{{$new_product->links()}}</div>

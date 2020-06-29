@@ -56,3 +56,8 @@ Route::get('dat-hang',[
 	'as'=>'dathang',
 	'uses'=>'PageController@getDatHang'
 ]);
+
+Route::post('dat-hang',[
+	'as'=>'dathang',
+	'uses'=>'PageController@postCheckout'
+]);
