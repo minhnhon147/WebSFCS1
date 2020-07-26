@@ -39,8 +39,8 @@
 	<script src="source/assets/dest/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	<script src="source/assets/dest/js/waypoints.min.js"></script>
 	<script src="source/assets/dest/js/wow.min.js"></script>
-	<!--customjs-->
 	<script src="source/assets/dest/js/custom2.js"></script>
+	<!--customjs-->
 	<script>
 	$(document).ready(function($) {    
 		$(window).scroll(function(){

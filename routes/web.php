@@ -55,9 +55,102 @@ Route::get('del-cart/{id}',[
 Route::get('dat-hang',[
 	'as'=>'dathang',
 	'uses'=>'PageController@getDatHang'
-]);
+])->middleware('LoginMiddleware');
 
 Route::post('dat-hang',[
 	'as'=>'dathang',
 	'uses'=>'PageController@postCheckout'
+
+])->middleware('LoginMiddleware');
+
+Route::get('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@getLogin'
 ]);
+
+Route::get('dang-ki',[
+	'as'=>'signin',
+	'uses'=>'PageController@getSignin'
+]);
+
+Route::get('admin',[
+	'as'=>'admin',
+	'uses'=>'AdminController@getLayout'
+]);
+
+Route::get('add',[
+	'as'=>'add',
+	'uses'=>'ProductController@getAddProduct'
+]);
+
+Route::group(['prefix'=>'admin'], function(){
+	Route::group(['prefix'=>'products'], function(){
+
+		Route::get('list','ProductController@getList');
+		
+		Route::get('add','ProductController@getAdd');
+		Route::post('add','ProductController@postProduct');
+
+		Route::post('edit/{id}','ProductController@postEdit');
+		Route::get('edit/{id}','ProductController@getEdit');
+		// Route::post('sua/{id}','XeController@postSua');
+
+		 Route::get('delete/{id}','ProductController@getDelete');
+
+	});
+});
+
+Route::group(['prefix'=>'admin'], function(){
+	Route::group(['prefix'=>'bills'], function(){
+
+		Route::get('list','BillController@getList');
+		Route::get('detail/{id}','BillController@getDetail');
+		Route::post('detail/{id}','BillController@postDetail');
+		
+
+	});
+});
+
+Route::group(['prefix'=>'admin'], function(){
+	Route::group(['prefix'=>'users'], function(){
+
+		Route::get('list','UserController@getList');
+
+		Route::post('edit/{id}','UserController@postEdit');
+		Route::get('edit/{id}','UserController@getEdit');
+		
+
+	});
+});
+
+
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
+]);
+
+
+
+
+Route::post('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@postLogin'	
+]);
+
+
+
+Route::post('dang-ki',[
+	'as'=>'signin',
+	'uses'=>'PageController@postSignin'
+]);
+
+Route::get('dang-xuat',[
+	'as'=>'logout',
+	'uses'=>'PageController@getLogout'
+]);
+
+
+Route::get('login-google',[
+	'as'=>'login-google'
+	,'uses'=>'LoginController@login_google']);
+Route::get('/google/callback','LoginController@callback_google');
